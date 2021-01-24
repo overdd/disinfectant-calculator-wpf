@@ -1,0 +1,49 @@
+﻿<Window x:Class="WpfApplication1.AddPositionWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:WpfApplication1"
+        mc:Ignorable="d"
+        Title="Создание позиции отчета" Height="640" Width="800">
+    <Grid VerticalAlignment="Top" >
+        <StackPanel  Background="Lavender" VerticalAlignment="Center">
+            <Label Target="{Binding ElementName=ObjectNameDez}" Content="Наименование подразделения:" MaxWidth="300" FontSize="18"></Label>
+            <TextBox GotFocus="RemoveText" LostFocus="AddText" Background="White" x:Name="ObjectNameDez" Text="Текст..." MaxWidth="300" TextAlignment="Center" Margin="0 0 0 0">
+            </TextBox>
+            <Label Target="{Binding ElementName=ObjectCount}" Content="Количество объектов:" MaxWidth="300" FontSize="18"></Label>
+            <TextBox GotFocus="RemoveText" LostFocus="AddText" Background="White" x:Name="ObjectCount" Text="Текст..." MaxWidth="300" TextAlignment="Center" Margin="0 0 0 0">
+            </TextBox>
+            <Label Target="{Binding ElementName=ObjectArea}" Content="Площадь объекта:" MaxWidth="300" FontSize="18"></Label>
+            <TextBox GotFocus="RemoveText" LostFocus="AddText" Background="White" x:Name="ObjectArea" Text="Текст..." MaxWidth="300" TextAlignment="Center" Margin="0 0 0 0">
+            </TextBox>
+            <Label Target="{Binding ElementName=ProcessType}" Content="Вид обработки:" MaxWidth="300" FontSize="18"></Label>
+            <TextBox GotFocus="RemoveText" LostFocus="AddText" Background="White" x:Name="ProcessType" Text="Текст..." MaxWidth="300" TextAlignment="Center" Margin="0 0 0 0">
+            </TextBox>
+            <Label Target="{Binding ElementName=ProcessesPerMonth}" Content="Кратность обработок в месяц:" MaxWidth="300" FontSize="18"></Label>
+            <TextBox GotFocus="RemoveText" LostFocus="AddText" Background="White" x:Name="ProcessesPerMonth" Text="Текст..." MaxWidth="300" TextAlignment="Center" Margin="0 0 0 0">
+            </TextBox>
+            <Label Target="{Binding ElementName=DezinfectionThing}" Content="Дезинфицирующее средство:" MaxWidth="300" FontSize="18"></Label>
+            <TextBox GotFocus="RemoveText" LostFocus="AddText" Background="White" x:Name="DezinfectionThing" Text="Текст..." MaxWidth="300" TextAlignment="Center" Margin="0 0 0 0">
+            </TextBox>
+            <Label Target="{Binding ElementName=DezType}" Content="Вид дез. средства:" MaxWidth="300" FontSize="18"></Label>
+            <TextBox Background="White" x:Name="DezType" Text="Текст..." MaxWidth="300" TextAlignment="Center" Margin="0 0 0 0">
+            </TextBox>
+            <Label Target="{Binding ElementName=WorkConcentration}" Content="Рабочая концентрация (%), кол-во таблеток:" MaxWidth="380" FontSize="18" Margin="80 0 0 0 "></Label>
+            <TextBox GotFocus="RemoveText" LostFocus="AddText" Background="White" x:Name="WorkConcentration" Text="Текст..." MaxWidth="300" TextAlignment="Center" Margin="0 0 0 0">
+            </TextBox>
+            <Label Target="{Binding ElementName=RashodRastvora}" Content="Расход рабочего раствора на один кв.м.:" MaxWidth="380" FontSize="18" Margin="80 0 0 0"></Label>
+            <TextBox GotFocus="RemoveText" LostFocus="AddText" Background="White" x:Name="RashodRastvora" Text="Текст..." MaxWidth="300" TextAlignment="Center" Margin="0 0 0 0">
+            </TextBox>
+            <Label Target="{Binding ElementName=KolichestvoRashodaOdnokrat}" MaxWidth="550" FontSize="18" Margin="250 0 0 0">
+                <TextBlock TextWrapping="WrapWithOverflow" MaxWidth="300">
+                    Количество рабочего расхода для однократной обработки объекта:
+                </TextBlock>
+            </Label>
+            <TextBox GotFocus="RemoveText" LostFocus="AddText" Background="White" x:Name="KolichestvoRashodaOdnokrat" Text="Текст..." MaxWidth="300" TextAlignment="Center" Margin="0 0 0 0">
+            </TextBox>
+            <Button Name="AddPositionButton" Click="AddPositionButton_OnClick" Background="White" Content="Добавить позицию" MaxWidth="160" Margin="0 20 0 0" FontSize="16" />
+            <TextBlock></TextBlock>
+        </StackPanel>
+    </Grid>
+</Window>

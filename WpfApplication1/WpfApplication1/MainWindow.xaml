@@ -1,0 +1,22 @@
+﻿<Window x:Class="WpfApplication1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApplication1"
+        xmlns:collections="clr-namespace:System.Collections;assembly=mscorlib"
+        mc:Ignorable="d"
+        Title="Отчеты" Height="210" Width="525">
+    <Grid Background="Lavender">
+        <StackPanel>
+            <Label Target="{Binding ElementName=LoginInput}" Content="Логин:" MaxWidth="300" FontSize="18"></Label>
+            <TextBox x:Name="LoginInput" GotFocus="RemoveText" LostFocus="AddText" Text="Текст..." MaxWidth="300" TextAlignment="Center" Margin="0 0 0 0">
+            </TextBox>
+            <Label Target="{Binding ElementName=PasswordInput}" Content="Пароль:" MaxWidth="300" FontSize="18"></Label>
+            <PasswordBox GotFocus="PasswordRemoveText" LostFocus="PasswordAddText" x:Name="PasswordInput" Width="300" Password="Текст..."  MaxWidth="300" HorizontalContentAlignment="Center"  Margin="0 0">
+            </PasswordBox>
+            <Button Name="LoginButton" Click="LoginButton_OnClick" Background="White" Content="Войти" MaxWidth="100" Margin="0 10 0 0"/>
+            <Button Click="RegistrationButtonClick" Background="White" Content="Регистрация" MaxWidth="100" Margin="0 5 0 0"/>
+        </StackPanel>
+    </Grid>
+</Window>
