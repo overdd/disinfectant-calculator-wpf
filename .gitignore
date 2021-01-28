@@ -120,6 +120,12 @@ DocProject/Help/html
 
 # Click-Once directory
 publish/
+*/.idea
+**/*/.idea
+.idea
+*/.vs
+**/*/.vs
+.vs
 
 # Publish Web Output
 *.[Pp]ublish.xml

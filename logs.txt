@@ -15,3 +15,33 @@
 24/01/2021 17:03:44: Программа запущена
 24/01/2021 17:04:16: Программа закрыта
 24/01/2021 17:04:25: Программа закрыта
+28/01/2021 14:28:04: Программа запущена
+Ошибка: Keyword not supported: 'version'.
+28/01/2021 14:28:07: Программа закрыта
+28/01/2021 14:29:28: Программа запущена
+Ошибка: Keyword not supported: 'version'.
+28/01/2021 14:29:35: Программа закрыта
+28/01/2021 14:30:13: Программа запущена
+Ошибка: Keyword not supported: 'version'.
+28/01/2021 14:31:45: Программа закрыта
+28/01/2021 14:32:23: Программа запущена
+28/01/2021 15:32:16: Программа запущена
+Ошибка: A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+28/01/2021 15:32:42: Программа закрыта
+28/01/2021 15:32:51: Программа запущена
+Ошибка: A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+28/01/2021 15:33:26: Программа закрыта
+28/01/2021 15:38:51: Программа запущена
+Ошибка: Incorrect syntax near the keyword 'IF'.
+Incorrect syntax near 'Users'.
+28/01/2021 15:38:56: Программа закрыта
+28/01/2021 15:39:22: Программа запущена
+Ошибка: Incorrect syntax near the keyword 'IF'.
+Incorrect syntax near 'Users'.
+28/01/2021 15:39:31: Программа закрыта
+28/01/2021 15:48:55: Программа запущена
+Ошибка: unable to open database file
+28/01/2021 15:48:59: Программа закрыта
+28/01/2021 15:49:19: Программа запущена
+28/01/2021 15:49:44: Программа закрыта
+28/01/2021 15:49:53: Программа закрыта
