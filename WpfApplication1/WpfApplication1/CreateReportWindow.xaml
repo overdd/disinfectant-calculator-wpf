@@ -5,7 +5,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:WpfApplication1"
         mc:Ignorable="d"
-        Title="CreateReportWindow" Height="200" Width="400">
+        Title="Калькулятор дезсредств | Создание расчета" Height="200" Width="400">
     <Grid Background="Lavender">
         <StackPanel  VerticalAlignment="Center">
             <Label Target="{Binding ElementName=ReportName}" Content="Название:" MaxWidth="300" FontSize="18"></Label>

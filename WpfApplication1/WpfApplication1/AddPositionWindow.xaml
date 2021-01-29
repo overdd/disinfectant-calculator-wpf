@@ -5,7 +5,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:WpfApplication1"
         mc:Ignorable="d"
-        Title="Создание позиции отчета" Height="640" Width="800">
+        Title="Калькулятор дезсредств | Создание позиции отчета" Height="640" Width="800">
     <Grid VerticalAlignment="Top" >
         <StackPanel  Background="Lavender" VerticalAlignment="Center">
             <Label Target="{Binding ElementName=ObjectNameDez}" Content="Наименование подразделения:" MaxWidth="300" FontSize="18"></Label>

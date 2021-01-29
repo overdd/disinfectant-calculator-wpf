@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WpfApplication1"
         xmlns:collections="clr-namespace:System.Collections;assembly=mscorlib"
         mc:Ignorable="d"
-        Title="Все отчеты" Height="450" Width="300">
+        Title="Калькулятор дезсредств | Все отчеты" Height="450" Width="300">
     <Grid>
         <ListBox x:Name="reportList" MouseDoubleClick="ReportList_OnMouseDoubleClick">
             <TextBlock FontWeight="Bold" TextDecorations="Underline" Text="Список всех сохраненных отчетов:" />

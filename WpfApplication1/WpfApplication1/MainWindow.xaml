@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WpfApplication1"
         xmlns:collections="clr-namespace:System.Collections;assembly=mscorlib"
         mc:Ignorable="d"
-        Title="Отчеты" Height="210" Width="525">
+        Title="Калькулятор дезсредств | Вход" Height="210" Width="525">
     <Grid Background="Lavender">
         <StackPanel>
             <Label Target="{Binding ElementName=LoginInput}" Content="Логин:" MaxWidth="300" FontSize="18"></Label>
