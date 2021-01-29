@@ -30,17 +30,13 @@ namespace WpfApplication1
             if (!string.IsNullOrWhiteSpace(RashodRastvora) &&
                 Single.TryParse(RashodRastvora, out float parsedRashod) &&
                 Single.TryParse(ObjectArea, out float parsedObjectArea)
-                // && !(KolichestvoRashodaOdnokrat > 0)
                 )
             {
                 KolichestvoRashodaOdnokrat = parsedRashod * parsedObjectArea;
             }
             else
             {
-                // if (!(KolichestvoRashodaOdnokrat > 0))
-                // {
                 KolichestvoRashodaOdnokrat = -1; 
-                // }
             }
 
             if (KolichestvoRashodaOdnokrat >= 0)

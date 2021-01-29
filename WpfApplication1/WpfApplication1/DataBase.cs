@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Data.SQLite;
 using System.IO;
@@ -110,13 +109,13 @@ namespace WpfApplication1
                 Command.Parameters.AddWithValue("@password", password);
                 Connect.Open();
                 User fetchedUser = null;
-                using (SQLiteDataReader rdr = Command.ExecuteReader())
+                using (SQLiteDataReader reader = Command.ExecuteReader())
                 {
-                    if (rdr.Read())
+                    if (reader.Read())
                     {
                         fetchedUser = new User
                         {
-                            Login = rdr.GetString(1), Password = rdr.GetString(2), IsAdmin = rdr.GetInt32(3)
+                            Login = reader.GetString(1), Password = reader.GetString(2), IsAdmin = reader.GetInt32(3)
                         };
 
                     }
@@ -157,20 +156,20 @@ namespace WpfApplication1
                 string commandText =
                     "INSERT INTO [Record] ([ReportId], [ObjectNameDez], [ObjectCountDez], [ObjectArea], [ProcessType], [DezType], [ProcessesPerMonth], [DezinfectionThing], [WorkConcentration], [RashodRastvora], [KolichestvoRashodaOdnokrat]) VALUES (@reportId, @objectNameDez, @objectCountDez, @objectArea, @processType, @dezType, @processesPerMonth, @dezinfectionThing, @workConcentration, @rashodRastvora, @kolichestvoRashodaOdnokrat)";
                 Command = new SQLiteCommand(commandText, Connect);
-                foreach (var o in list)
+                foreach (var item in list)
                 {
                     Command.Parameters.Clear();
-                    Command.Parameters.AddWithValue("@reportId", o.Meta.Id);
-                    Command.Parameters.AddWithValue("@objectNameDez", o.ObjectNameDez);
-                    Command.Parameters.AddWithValue("@objectCountDez", Int32.Parse(o.ObjectCountDez));
-                    Command.Parameters.AddWithValue("@objectArea", Single.Parse(o.ObjectArea));
-                    Command.Parameters.AddWithValue("@processType", o.ProcessType);
-                    Command.Parameters.AddWithValue("@dezType", o.DezType);
-                    Command.Parameters.AddWithValue("@processesPerMonth", o.ProcessesPerMonth);
-                    Command.Parameters.AddWithValue("@dezinfectionThing", o.DezinfectionThing);
-                    Command.Parameters.AddWithValue("@workConcentration", o.WorkConcentration);
-                    Command.Parameters.AddWithValue("@rashodRastvora", o.RashodRastvora);
-                    Command.Parameters.AddWithValue("@kolichestvoRashodaOdnokrat", o.KolichestvoRashodaOdnokrat);
+                    Command.Parameters.AddWithValue("@reportId", item.Meta.Id);
+                    Command.Parameters.AddWithValue("@objectNameDez", item.ObjectNameDez);
+                    Command.Parameters.AddWithValue("@objectCountDez", Int32.Parse(item.ObjectCountDez));
+                    Command.Parameters.AddWithValue("@objectArea", Single.Parse(item.ObjectArea));
+                    Command.Parameters.AddWithValue("@processType", item.ProcessType);
+                    Command.Parameters.AddWithValue("@dezType", item.DezType);
+                    Command.Parameters.AddWithValue("@processesPerMonth", item.ProcessesPerMonth);
+                    Command.Parameters.AddWithValue("@dezinfectionThing", item.DezinfectionThing);
+                    Command.Parameters.AddWithValue("@workConcentration", item.WorkConcentration);
+                    Command.Parameters.AddWithValue("@rashodRastvora", item.RashodRastvora);
+                    Command.Parameters.AddWithValue("@kolichestvoRashodaOdnokrat", item.KolichestvoRashodaOdnokrat);
                     Command.ExecuteNonQuery();
                 }
                 Connect.Close();
@@ -203,7 +202,6 @@ namespace WpfApplication1
             List<RecordMeta> reports = new List<RecordMeta>();
             using (SQLiteConnection Connect = new SQLiteConnection($@"Data Source={Config.DB_PATH}; Version=3;"))
             {
-
                 string commandText =
                     "SELECT * FROM [RecordMeta]";
                 SQLiteCommand Command = new SQLiteCommand(commandText, Connect);
@@ -228,30 +226,29 @@ namespace WpfApplication1
             List<Record> reports = new List<Record>();
             using (SQLiteConnection Connect = new SQLiteConnection($@"Data Source={Config.DB_PATH}; Version=3;"))
             {
-
                 string commandText =
                     "SELECT * FROM [Record] WHERE [ReportId] = @reportId";
                 SQLiteCommand Command = new SQLiteCommand(commandText, Connect);
                 Command.Parameters.AddWithValue("@reportId", report.Id);
                 Connect.Open();
-                using (SQLiteDataReader rdr = Command.ExecuteReader())
+                using (SQLiteDataReader reader = Command.ExecuteReader())
                 {
-                    while (rdr.Read())
+                    while (reader.Read())
                     {
                         reports.Add(new Record
                         {
-                            Id = rdr.GetInt32(0),
+                            Id = reader.GetInt32(0),
                             Meta = report,
-                            ObjectNameDez = rdr.GetString(2),
-                            ObjectCountDez = rdr.GetInt32(3).ToString(),
-                            ObjectArea = rdr.GetString(4).Replace(".", ","),
-                            ProcessType = rdr.GetString(5),
-                            DezType = rdr.GetString(6),
-                            ProcessesPerMonth = rdr.GetInt32(7),
-                            DezinfectionThing = rdr.GetString(8),
-                            WorkConcentration = rdr.GetFloat(9),
-                            RashodRastvora = rdr.GetString(10).Replace(".", ","),
-                            KolichestvoRashodaOdnokrat = rdr.GetFloat(11)
+                            ObjectNameDez = reader.GetString(2),
+                            ObjectCountDez = reader.GetInt32(3).ToString(),
+                            ObjectArea = reader.GetString(4).Replace(".", ","),
+                            ProcessType = reader.GetString(5),
+                            DezType = reader.GetString(6),
+                            ProcessesPerMonth = reader.GetInt32(7),
+                            DezinfectionThing = reader.GetString(8),
+                            WorkConcentration = reader.GetFloat(9),
+                            RashodRastvora = reader.GetString(10).Replace(".", ","),
+                            KolichestvoRashodaOdnokrat = reader.GetFloat(11)
                         });
                     }
                 }

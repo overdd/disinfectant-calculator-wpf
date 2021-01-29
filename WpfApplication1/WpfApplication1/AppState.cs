@@ -17,7 +17,6 @@ namespace WpfApplication1
         public static void InitEmptyRecords()
         {
             CurrentRecords = new List<Record>();
-            // ReportWindow.reportGrid.ItemsSource = CurrentRecords;
         }
 
         public static void AddRecordRow(Record record)

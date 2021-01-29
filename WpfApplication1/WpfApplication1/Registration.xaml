@@ -9,13 +9,13 @@
     <Grid>
         <StackPanel Background="Lavender" >
             <Label Target="{Binding ElementName=LoginInput}" Content="Логин:" MaxWidth="300" FontSize="18"></Label>
-            <TextBox x:Name="LoginInput" Text="Логин" MaxWidth="300" TextAlignment="Center" Margin="0 0 0 0">
+            <TextBox x:Name="LoginInput" GotFocus="RemoveText" Text="Логин" MaxWidth="300" TextAlignment="Center" Margin="0 0 0 0">
             </TextBox>
             <Label Target="{Binding ElementName=PasswordInput}" Content="Пароль:" MaxWidth="300" FontSize="18"></Label>
-            <TextBox x:Name="PasswordInput" Text="Пароль" MaxWidth="300" TextAlignment="Center" Margin="0 0">
+            <TextBox x:Name="PasswordInput" GotFocus="RemoveText" Text="Пароль" MaxWidth="300" TextAlignment="Center" Margin="0 0">
             </TextBox>
             <WrapPanel Orientation="Horizontal" MaxWidth="300">
-                <Label Target="{Binding ElementName=LoginInput}" Content="Админ?" MaxWidth="300" FontSize="18"></Label>
+                <Label Target="{Binding ElementName=LoginInput}" Content="Администратор?" MaxWidth="300" FontSize="18"></Label>
                 <CheckBox x:Name="IsAdminCheckBox" VerticalAlignment="Center"></CheckBox>
             </WrapPanel>
             <Button Name="RegButton" Click="RegButton_OnClick" Background="White" Content="Зарегистрироваться" MaxWidth="160" Margin="0 20 0 0" FontSize="16" />

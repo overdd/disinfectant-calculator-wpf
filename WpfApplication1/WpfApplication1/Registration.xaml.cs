@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace WpfApplication1
 {
@@ -35,6 +36,14 @@ namespace WpfApplication1
             
             MessageBox.Show("Регистрация успешна!", "Alert", MessageBoxButton.OK, MessageBoxImage.Information);
             
+        }
+
+        public void RemoveText(object sender, EventArgs e)
+        {
+            if ((sender as TextBox).Text == "Логин" || (sender as TextBox).Text == "Пароль")
+            {
+                (sender as TextBox).Text = "";
+            }
         }
     }
 }
