@@ -102,5 +102,10 @@ namespace WpfApplication1
         {
             MessageBox.Show("Текст справки", "Справка", MessageBoxButton.OK, MessageBoxImage.Information);
         }
+
+        private void resultGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
